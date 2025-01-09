@@ -7,6 +7,11 @@ import { z } from "zod";
 import { eq } from "drizzle-orm";
 import { rateLimiter } from "hono-rate-limiter";
 
+function nToAZ(n: number): string {
+    let a: number;
+    return (a = Math.floor(n / 26)) >= 0 ? nToAZ(a - 1) + String.fromCharCode(65 + (n % 26)) : "";
+}
+
 const app = new Hono();
 
 const cfg = await getConfig();
@@ -53,7 +58,7 @@ app.get("/", (c) => {
 
         const { set } = params.data;
 
-        const { spreadsheetID, sheet, playerIdColumn, statusColumn, statusColumnID, ...other } = cfg[set];
+        const { spreadsheetID, sheet, playerIdColumn, statusColumnID, ...other } = cfg[set];
 
         const sheetData = await sheetsClient.spreadsheets.values.get(
             {
@@ -110,7 +115,7 @@ app.get("/", (c) => {
             const playerID = row[playerIdColumn];
             const playerIndex = sheetUpdate.findIndex((v) => v.playerId === playerID);
             if (playerIndex !== -1) {
-                toBeUpdated.push({ value: [[sheetUpdate[playerIndex].outCome]], range: `${sheet}!${statusColumn}${index + 1}` });
+                toBeUpdated.push({ value: [[sheetUpdate[playerIndex].outCome]], range: `${sheet}!${nToAZ(statusColumnID)}${index + 1}` });
             }
         });
 

@@ -3,10 +3,8 @@
         "spreadsheetID": "...",
         "sheet": "Roster",
         "playerIdColumn": 4,
-        "statusColumn": "J",
         "statusColumnID": 9,
         "rank": {
-            "column": "B",
             "columnID": 1,
             "dbKey": "bwLevel",
             "levels": ["N/A", "Private", "Corporal", "Sergeant", "Staff Sergeant", "Warrant Officer", "Lieutenant", "Captain", "Major", "Colonel", "General"]
@@ -16,16 +14,13 @@
         "spreadsheetID": "...",
         "sheet": "Roster",
         "playerIdColumn": 3,
-        "statusColumn": "K",
         "statusColumnID": 10,
         "rank": {
-            "column": "B",
             "columnID": 1,
             "dbKey": "coplevel",
             "levels": ["N/A", "CSO", "PCSO", "PC", "SPC", "SGT", "DSGT", "INSP", "C/INSP", "SUPT", "C/SUPT", "A/COM", "D/COM", "COM"]
         },
         "constab": {
-            "column": "F",
             "columnID": 5,
             "dbKey": "polConstab",
             "levels": ["N/A", "Academy", "Academy Command", "Patrol", "Patrol Command", "Command"]
@@ -35,10 +30,8 @@
         "spreadsheetID": "...",
         "sheet": "Roster",
         "playerIdColumn": 3,
-        "statusColumn": "I",
         "statusColumnID": 8,
         "rank": {
-            "column": "B",
             "columnID": 1,
             "dbKey": "mediclevel",
             "levels": ["N/A", "NUR", "FR", "PAR", "SPR", "JDOC", "DOC", "SDOC", "GP", "MLO", "SUR", "CST", "CMO"]
